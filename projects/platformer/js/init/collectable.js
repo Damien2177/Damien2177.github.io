@@ -15,7 +15,7 @@
     /**
      * init: Initialize all collectables.
      * 
-     * GOAL: Add as many collectables as necessary to make your level challenging.
+     * ]les as necessary to make your level challenging.
      * 
      * Use the createCollectable() Function to create collectables for the level.
      * See the type Object, above, for the types of collectables and their point values.
@@ -38,8 +38,8 @@
         
         // example: 
         createCollectable(type.steve, 200, 170, 6, 0.7);
-        
-        
+        createCollectable(type.sword, 100, 4, 1, 12);
+        createCollectable(type.crewmate, 213, 13);
         
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
