@@ -72,7 +72,6 @@
 			*/
 			function update() {
 				positionX = positionX + speed;
-				var speed = 10;
 				moveBoxTo(positionX);
 				if (positionX > boardWidth) {
 					speed = -speed
@@ -92,7 +91,7 @@
 			function handleBoxClick() {
 				positionX = 0;
 				points = points + 1;
-				speed = speed + 3; 
+				speed = speed + 3 
 				if (speed < 0){
 					speed = speed + 3
 				} else {
