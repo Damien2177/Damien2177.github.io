@@ -38,8 +38,8 @@
         
         // example: 
         createCollectable(type.steve, 200, 170, 6, 0.7);
-        createCollectable(type.sword, 100, 4, 1, 12);
-        createCollectable(type.crewmate, 213, 13);
+        createCollectable(type.max, 100, 4, 1, 12);
+        createCollectable(type.db, 213, 13);
         
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
