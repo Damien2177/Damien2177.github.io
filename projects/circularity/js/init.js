@@ -51,7 +51,7 @@ var init = function (window) {
             // TODO 4 : Update the circle's position //
             // deleted fuction call
 	for(var i = 0;i < circles.length;i++){
-        physikz.updatePosition([i]);
+        physikz.updatePosition(circles[i]);
     }
 }
             
@@ -59,8 +59,8 @@ var init = function (window) {
             // deleted repeated calls
             // TODO 9 : Iterate over the array
            for(var i = 0;i < circles;i++){
-            physikz.updatePosition([i]);
-            game.checkCirclePosition([i]);
+            physikz.updatePosition(circles[i]);
+            game.checkCirclePosition(circles[i]);
            }
             
         }
