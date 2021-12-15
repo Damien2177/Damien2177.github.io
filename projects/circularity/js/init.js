@@ -58,7 +58,7 @@ var init = function (window) {
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
             // deleted repeated calls
             // TODO 9 : Iterate over the array
-           for(var i = 0;i < circles;i++){
+           for(var i = 0;i < circles.length;i++){
             physikz.updatePosition(circles[i]);
             game.checkCirclePosition(circles[i]);
            }
@@ -82,10 +82,10 @@ var init = function (window) {
                 circle.x = 0;
             }
             if (circle.y < canvas.height){
-                circle.y = 0
+                circle.y = 0;
             }
             if (circle.y > canvas.height){
-                circle.y = 0
+                circle.y = 0;
             }
 
 
