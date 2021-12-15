@@ -31,7 +31,11 @@ var init = function (window) {
             circles.push(circle);
         }
         // TODO 3 / 8 : Call the drawCircle() function 
-        
+        drawCircle();
+        drawCircle();
+        drawCircle();
+        drawCircle();
+        drawCircle();
 
         for (var circlesDrawn = 0;circlesDrawn < 100;circlesDrawn++){
             drawCircle();
