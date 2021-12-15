@@ -32,8 +32,10 @@ var init = function (window) {
         }
 
         // TODO 3 / 8 : Call the drawCircle() function 
-        drawCircle();
-
+        for (var circlesDrawn = 0;circlesDrawn < 100;circlesDrawn++){
+            drawCircle();
+        }
+//drawing in this workspace because the other one didn't work with the same code
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
