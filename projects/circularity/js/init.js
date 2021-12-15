@@ -30,11 +30,10 @@ var init = function (window) {
             view.addChild(circle);
             circles.push(circle);
         }
-
         // TODO 3 / 8 : Call the drawCircle() function 
-        drawCircle();
+        
 
-        for(var circlesDrawn = 0;circlesDrawn < 100;circlesDrawn++){
+        for (var circlesDrawn = 0;circlesDrawn < 100;circlesDrawn++){
             drawCircle();
         }
         ////////////////////////////////////////////////////////////
@@ -49,7 +48,7 @@ var init = function (window) {
         function update() {
             // TODO 4 : Update the circle's position //
             // deleted fuction call
-	        for(var i = 0;i < circles.length;i++){
+	        for (var i = 0;i < circles.length;i++){
                 physikz.updatePosition(circles[i]);
     }
 }
@@ -57,7 +56,8 @@ var init = function (window) {
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
             // deleted repeated calls
             // TODO 9 : Iterate over the array
-           for(var i = 0;i < circles.length;i++){
+           for (var i = 0;i < circles.length;i++){
+                var eachCricle = circles[i];
                 physikz.updatePosition(circles[i]);
                 game.checkCirclePosition(circles[i]);
            }
