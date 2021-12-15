@@ -20,7 +20,7 @@ var init = function (window) {
         ////////////////////////////////////////////////////////////
         
         // TODO 1 : Declare and initialize our variables
-    
+        //There is another workspace containing this exact code but since this one wasn't working while the new one is I pasted my code into that one so I could complete the project. I hope this isn't against the rules and I can still earn my ibc this way, just couldn't find any other method of completing this
         var circle;
         var circles = [];
         // TODO 2 : Create a function that draws a circle 
@@ -31,11 +31,7 @@ var init = function (window) {
             circles.push(circle);
         }
         // TODO 3 / 8 : Call the drawCircle() function 
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
+        
 
         for (var circlesDrawn = 0;circlesDrawn < 100;circlesDrawn++){
             drawCircle();
