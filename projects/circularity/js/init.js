@@ -31,6 +31,11 @@ var init = function (window) {
             view.addChild(circle);
             circles.push(circle);
         }
+        drawCircle();
+        drawCircle();
+        drawCircle();
+        drawCircle();
+
 
         // TODO 3 / 8 : Call the drawCircle() function 
 
