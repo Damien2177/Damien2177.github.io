@@ -35,7 +35,7 @@ var init = function (window) {
         for (var circlesDrawn = 0;circlesDrawn < 100;circlesDrawn++){
             drawCircle();
         }
-//drawing in this workspace because the other one didn't work with the same code
+//drawing in this workspace because the other workspace didn't work with the exact same code. I hope this isn't against the rules and I can still earn my ibc this way
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -55,7 +55,6 @@ var init = function (window) {
             // TODO 9 : Iterate over the array
            
             for (var i = 0;i < circles.length;i++){
-                var eachCricle = circles[i];
                 physikz.updatePosition(circles[i]);
                 game.checkCirclePosition(circles[i]);
            }
