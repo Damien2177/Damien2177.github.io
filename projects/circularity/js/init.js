@@ -20,26 +20,20 @@ var init = function (window) {
         ////////////////////////////////////////////////////////////
         
         // TODO 1 : Declare and initialize our variables
-    
+
         var circle;
         var circles = [];
         // TODO 2 : Create a function that draws a circle 
-        var drawCircle = function() {
+        function drawCircle(){
             circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
             physikz.addRandomVelocity(circle, canvas);
             view.addChild(circle);
             circles.push(circle);
         }
+
         // TODO 3 / 8 : Call the drawCircle() function 
         drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
 
-        for (var circlesDrawn = 0;circlesDrawn < 100;circlesDrawn++){
-            drawCircle();
-        }
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -51,16 +45,13 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the circle's position //
-            // deleted fuction call
-                  
+
+            
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
-            // deleted repeated calls
+           
+
             // TODO 9 : Iterate over the array
-           for (var i = 0;i < circles.length;i++){
-                var eachCricle = circles[i];
-                physikz.updatePosition(circles[i]);
-                game.checkCirclePosition(circles[i]);
-           }
+           
             
         }
     
@@ -77,18 +68,9 @@ var init = function (window) {
             }
             
             // TODO 7 : YOUR CODE STARTS HERE //////////////////////
-            if (circle.x < 0){
-                circle.x = 0;
-            }
-            if (circle.y < 0){
-                circle.y = 0;
-            }
-            if (circle.y > canvas.height){
-                circle.y = 0;
-            }
+            
 
 
-        }
             // YOUR TODO 7 CODE ENDS HERE //////////////////////////
         }
         
@@ -106,7 +88,7 @@ var init = function (window) {
         
         app.addUpdateable(window.opspark.game);
     }
-
+};
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
