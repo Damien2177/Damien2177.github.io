@@ -73,7 +73,9 @@ var init = function (window) {
             }
             
             // TODO 7 : YOUR CODE STARTS HERE //////////////////////
-            if (circle.x < 0){
+            //if its already at 0 we want it to go the opposite way. according to the picture
+            //what's opposite of the x < 0?
+            if (circle.x > 0){
                 circle.x = 0;
             }
             if (circle.y < 0){
