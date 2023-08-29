@@ -20,22 +20,21 @@ var init = function (window) {
         ////////////////////////////////////////////////////////////
         
         // TODO 1 : Declare and initialize our variables
-        //There is another workspace containing this exact code but since this one wasn't working while the new one is I pasted my code into that one so I could complete the project. I hope this isn't against the rules and I can still earn my ibc this way, just couldn't find any other method of completing this
         var circle;
         var circles = [];
         // TODO 2 : Create a function that draws a circle 
-        var drawCircle = function() {
+        function drawCircle(){
             circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
             physikz.addRandomVelocity(circle, canvas);
             view.addChild(circle);
             circles.push(circle);
         }
-        // TODO 3 / 8 : Call the drawCircle() function 
-        
 
+        // TODO 3 / 8 : Call the drawCircle() function 
         for (var circlesDrawn = 0;circlesDrawn < 100;circlesDrawn++){
             drawCircle();
         }
+//drawing in this workspace because the other workspace didn't work with the exact same code. I hope this isn't against the rules and I can still earn my ibc this way
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -47,13 +46,14 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the circle's position //
-            // deleted fuction call
-                  
+
+            
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
-            // deleted repeated calls
+           
+
             // TODO 9 : Iterate over the array
-           for (var i = 0;i < circles.length;i++){
-                var eachCricle = circles[i];
+           
+            for (var i = 0;i < circles.length;i++){
                 physikz.updatePosition(circles[i]);
                 game.checkCirclePosition(circles[i]);
            }
@@ -73,8 +73,7 @@ var init = function (window) {
             }
             
             // TODO 7 : YOUR CODE STARTS HERE //////////////////////
-            //if its already at 0 we want it to go the opposite way. according to the picture
-            //what's opposite of the x < 0?
+            
             if (circle.x < 0){
                 circle.x = canvas.width;
             }
@@ -86,7 +85,6 @@ var init = function (window) {
             }
 
 
-        }
             // YOUR TODO 7 CODE ENDS HERE //////////////////////////
         }
         
@@ -104,7 +102,7 @@ var init = function (window) {
         
         app.addUpdateable(window.opspark.game);
     }
-
+};
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
