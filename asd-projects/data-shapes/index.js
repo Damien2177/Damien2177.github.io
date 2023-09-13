@@ -86,13 +86,13 @@ dataShapes.push(shape);
 
   function goodDisplay() {
     // TODO 4-b: call your handleGood function
-     var currentShape = dataShapes[currentShape];
+     var currentShape = dataShapes[1];
     handleGood(currentShape.color, currentShape.shape, currentShape.repeat)
   }
 
   function badDisplay() {
     // TODO 5-b: call your handleBad function
-    currentShape = dataShapes[currentIndex];
+    var currentShape = dataShapes[1];
     var repeat = (currentShape.repeat);
     handleBad(currentShape, repeat);
   }
