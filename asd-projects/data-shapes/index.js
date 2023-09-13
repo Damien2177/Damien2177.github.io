@@ -50,7 +50,7 @@ dataShapes.push(shape);
       var currentShape = dataShapes[i];
       if (currentShape.color === "red"){
         currentShape.goodBehavior = "bounce";
-      } else if (currentShape.color = "blue"){
+      } else if (currentShape.color === "blue"){
         currentShape.goodBehavior = "blink"
       } else {
         currentShape.goodBehavior = "spin"}
