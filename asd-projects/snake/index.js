@@ -43,8 +43,17 @@ init();
 
 function init() {
   // TODO 4b-2: initialize the apple
+  makeApple()
   // TODO 4c-2: initialize the snake
+  // initialize the snake's body as an empty Array
+snake.body = [];
+
+// make the first snakeSquare and set it as the head
+makeSnakeSquare(10, 10);
+snake.head = snake.body[0];
   // TODO 5a: Initialize the interval
+  // start update interval
+updateInterval = setInterval(update, 100);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -219,6 +228,19 @@ function endGame() {
  */
 function makeApple() {
   // TODO 4b-1: Fill in the makeApple() code block
+  apple.element = $("<div>").addClass("apple").appendTo(board);
+
+  // get a random available row/column on the board
+  var randomPosition = getRandomAvailablePosition();
+
+  // initialize the row/column properties on the Apple Object
+  apple.row = randomPosition.row;
+  apple.column = randomPosition.column;
+
+  // position the apple on the screen
+  repositionSquare(apple);
+
+
 }
 
 /* Create an HTML element for a snakeSquare using jQuery. Then, given a row and
