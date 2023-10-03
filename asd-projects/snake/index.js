@@ -104,13 +104,27 @@ function moveSnake() {
   /* 
   TODO 11: Move each part of the snake's body such that it's body follows the head.
   
+  
   HINT: To complete this TODO we must figure out the next direction, row, and 
   column for each snakeSquare in the snake's body. The parts of the snake are 
   stored in the Array snake.body and each part knows knows its current 
   column/row properties. 
   
-  */
+  *//* code to loop through the indexes of the snake.body Array*/ 
+  /*for (var i = 0 ; snake.body[i] < ;i++) {
+    var snakeSquare = "???";
 
+    var nextSnakeSquare = "???";
+    var nextRow = "???";
+    var nextColumn = "???";
+    var nextDirection = "???";
+
+    snakeSquare.direction = nextDirection;
+    snakeSquare.row = nextRow;
+    snakeSquare.column = nextColumn;
+    repositionSquare(snakeSquare);
+}
+*/
   //Before moving the head, check for a new direction from the keyboard input
   checkForNewDirection();
 
@@ -186,16 +200,20 @@ function handleAppleCollision() {
   If the tail is moving "down", place the next snakeSquare above it.
   etc...
   */
-  row = snake.tail.row
-  column = snake.tail.column
+  var row = 0;
+  var column = 0;
  if (snake.tail.direction === up){
-  snakeSquare = snake.tail.column - 1
+  row = snake.tail.row
+  column = snake.tail.column - 1
  } else if (snake.tail.direction === down){
-
+  row = snake.tail.row
+  column = snake.tail.column + 1
  } else if (snake.tail.direction === left){
-
+  row = snake.tail.row - 1
+  column = snake.tail.column 
  } else if (snake.tail.direction === right){
-
+  row = snake.tail.row + 1
+  column = snake.tail.column 
  }
 
   // code to determine the row and column of the snakeSquare to add to the snake
