@@ -115,10 +115,10 @@ function moveSnake() {
     var snakeSquare = snake.body[i];
 
     var nextSnakeSquare = {
-        row: snakeSquare.row , 
-        column: snakeSquare.column, 
+        row: snake.body[i - 1], 
+        column: snake.body[i - 1], 
       direction: snakeSquare.direction
-      };
+  };
     var nextRow = nextSnakeSquare.row;
     var nextColumn = nextSnakeSquare.column;
     var nextDirection = nextSnakeSquare.direction;
