@@ -111,14 +111,9 @@ function moveSnake() {
   column/row properties. 
   
   *//* code to loop through the indexes of the snake.body Array*/ 
-  for (var i = snake.body.length - 1; i >= 1 ;i--) {
+  for (var i = snake.body.length - 1; i >= 1 ; i--) {
     var snakeSquare = snake.body[i];
-
-    var nextSnakeSquare = {
-        row: snake.body[i - 1], 
-        column: snake.body[i - 1], 
-      direction: snakeSquare.direction
-  };
+    var nextSnakeSquare = snake.body[i - 1];
     var nextRow = nextSnakeSquare.row;
     var nextColumn = nextSnakeSquare.column;
     var nextDirection = nextSnakeSquare.direction;
@@ -234,8 +229,13 @@ function hasCollidedWithSnake() {
   head and each part of the snake's body also knows its own row and column.
   
   */
-
+ 
+for (let i = 0; snake.body.length > i; i++)
+  if (snake.body[0] === snake.body[i]){
+    return true;
+  } else {
   return false;
+  }
 }
 
 function endGame() {
