@@ -230,12 +230,11 @@ function hasCollidedWithSnake() {
   
   */
  
-for (let i = 0; snake.body.length > i; i++)
-  if (snake.body[0] === snake.body[i]){
+for (let i = 1; snake.body.length > i; i++){
+  if (snake.body[0].column && snake.body[0].row === snake.body[i].column && snake.body[i].row){
     return true;
-  } else {
-  return false;
-  }
+  } 
+} return false;
 }
 
 function endGame() {
