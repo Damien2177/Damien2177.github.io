@@ -90,7 +90,7 @@ function runProgram(){
     if (walker.xcord >= maxx){
       walker.xcord = walker.xcord - 4
     } else if (walker.xcord <= 0){
-      walker.xcord = walker.xcord - 4
+      
     } else if (walker.ycord >= maxy){
       
     } else if (walker.ycord <= 0){
