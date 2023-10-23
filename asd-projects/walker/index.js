@@ -22,11 +22,12 @@ function runProgram(){
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
   $(document).on('keydown', handleKeyDown);                           // change 'eventType' to the type of event you want to handle
+  $(document).on("keyup", handleKeyUp); //detects when arrow keys are lifted
   const KEY = {
     "LEFT": 37,
     "UP": 38,
     "RIGHT": 40,
-    "DOWN": 39
+    "DOWN": 39,
   }
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -37,8 +38,8 @@ function runProgram(){
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    
-
+    repositionGameItem();
+    redrawGameItem();
   }
   
   /* 
@@ -46,14 +47,16 @@ function runProgram(){
   */
   function handleKeyDown(event) {
       if (event.which === KEY.RIGHT) {
-        console.log("right pressed");
-      } else if (event.which === KEY.LEFT){
-        console.log("left pressed");
-      } else if (event.which === KEY.DOWN){
-        console.log("down pressed");
-      } else if (event.which === KEY.UP) {
-        console.log("up pressed");
-      
+        walker.xspeed = 5;
+      } 
+      if (event.which === KEY.LEFT){
+        walker.xspeed = -5;
+      } 
+      if (event.which === KEY.DOWN){
+        walker.yspeed -5;
+      } 
+      if (event.which === KEY.UP) {
+        walker.yspeed = 5
     }
     console.log()
   }
@@ -62,6 +65,21 @@ function runProgram(){
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
 
+
+  function repositionGameItem(){
+    xcord += xspeed;
+    ycord += yspeed;
+    return xcord, ycord;
+  }
+//moves box right
+  function redrawGameItem(){
+    $("#walker").css("top", top - walker.yspeed);
+  }
+
+  function handleKeyUp(){
+    xspeed = 0;
+    yspeed = 0;
+  }
   
   function endGame() {
     // stop the interval timer
