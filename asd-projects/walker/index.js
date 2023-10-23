@@ -89,14 +89,24 @@ function runProgram(){
     let maxy = $("#board").height();
     if (walker.xcord >= maxx){
       walker.xcord = walker.xcord - 4
-    } else if (walker.xcord <= 0){
-      
+      console.log("aaa")
+    } else if (walker.xcord < 0){
+      console.log("aaa")
+      walker.xcord = walker.xcord + 1
     } else if (walker.ycord >= maxy){
-      
-    } else if (walker.ycord <= 0){
-
+      console.log("aaa")
+      walker.ycord = walker.ycord - 4
+    } else if (walker.ycord < 0){
+      console.log("aaa")
+      walker.ycord = walker.ycord + 4
     }
   }
+
+  var randomColor = "#000000".replace(/0/g, function () {
+    return (~~(Math.random() * 16)).toString(16);
+  });
+
+  $("walker").css("backgroud-color", randomColor) 
   //resets speeds to zero when key released
   
   function endGame() {
