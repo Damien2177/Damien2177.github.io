@@ -26,8 +26,8 @@ function runProgram(){
   const KEY = {
     "LEFT": 37,
     "UP": 38,
-    "RIGHT": 40,
-    "DOWN": 39,
+    "RIGHT": 39,
+    "DOWN": 40,
   }
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -52,10 +52,10 @@ function runProgram(){
       if (event.which === KEY.LEFT){
         walker.xspeed = -5;
       } 
-      if (event.which === KEY.DOWN){
-        walker.yspeed -5;
+      if (event.which === KEY.UP){
+        walker.yspeed = -5;
       } 
-      if (event.which === KEY.UP) {
+      if (event.which === KEY.DOWN) {
         walker.yspeed = 5
     }
     console.log()
@@ -69,18 +69,18 @@ function runProgram(){
   function repositionGameItem(){
     walker.xcord += walker.xspeed;
     walker.ycord += walker.yspeed;
-    return walker.xcord, walker.ycord;
+    
   }
 //moves box right
   function redrawGameItem(){
-    $("#walker").css("top", walker.yspeed);
-    $("#walker").css("top", walker.xspeed);
+    $("#walker").css("top", walker.ycord);
+    $("#walker").css("left", walker.xcord);
   }
 
   function handleKeyUp(){
     walker.xspeed = 0;
     walker.yspeed = 0;
-    return walker.xspeed, walker.yspeed;
+    
   }
   //resets speeds to zero when key released
   
