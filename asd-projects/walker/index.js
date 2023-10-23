@@ -92,7 +92,7 @@ function runProgram(){
       console.log("aaa")
     } else if (walker.xcord < 0){
       console.log("aaa")
-      walker.xcord = walker.xcord + 1
+      walker.xcord = walker.xcord + 4
     } else if (walker.ycord >= maxy){
       console.log("aaa")
       walker.ycord = walker.ycord - 4
@@ -101,13 +101,17 @@ function runProgram(){
       walker.ycord = walker.ycord + 4
     }
   }
-
-  var randomColor = "#000000".replace(/0/g, function () {
+let randomColor;
+function rc(){
+  randomColor = "#000000".replace(/0/g, function () {
     return (~~(Math.random() * 16)).toString(16);
-  });
+  })}
+rc();
+  $("#walker").css("background-color", randomColor);
+ rc();
+  $("#board").css("background-color", randomColor);
 
-  $("walker").css("backgroud-color", randomColor) 
-  //resets speeds to zero when key released
+ //resets speeds to zero when key released
   
   function endGame() {
     // stop the interval timer
