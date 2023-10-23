@@ -38,8 +38,9 @@ function runProgram(){
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    repositionGameItem();
     redrawGameItem();
+    wallCollision();
+    repositionGameItem();
   }
   
   /* 
@@ -81,6 +82,20 @@ function runProgram(){
     walker.xspeed = 0;
     walker.yspeed = 0;
     
+  }
+
+  function wallCollision(){
+    let maxx = $("#board").width();
+    let maxy = $("#board").height();
+    if (walker.xcord >= maxx){
+      walker.xcord = walker.xcord - 4
+    } else if (walker.xcord <= 0){
+      walker.xcord = walker.xcord - 4
+    } else if (walker.ycord >= maxy){
+      
+    } else if (walker.ycord <= 0){
+
+    }
   }
   //resets speeds to zero when key released
   
