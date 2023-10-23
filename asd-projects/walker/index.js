@@ -14,7 +14,7 @@ function runProgram(){
     xcord: 0,
     ycord: 0,
     xspeed: 0,
-    yspeed: 0
+    yspeed: 0,
   }
   // Game Item Objects
 
@@ -67,19 +67,22 @@ function runProgram(){
 
 
   function repositionGameItem(){
-    xcord += xspeed;
-    ycord += yspeed;
-    return xcord, ycord;
+    walker.xcord += walker.xspeed;
+    walker.ycord += walker.yspeed;
+    return walker.xcord, walker.ycord;
   }
 //moves box right
   function redrawGameItem(){
-    $("#walker").css("top", top - walker.yspeed);
+    $("#walker").css("top", walker.yspeed);
+    $("#walker").css("top", walker.xspeed);
   }
 
   function handleKeyUp(){
-    xspeed = 0;
-    yspeed = 0;
+    walker.xspeed = 0;
+    walker.yspeed = 0;
+    return walker.xspeed, walker.yspeed;
   }
+  //resets speeds to zero when key released
   
   function endGame() {
     // stop the interval timer
