@@ -43,10 +43,10 @@ init();
 
 function init() {
   // TODO 4b-2: initialize the apple
+  snake.body = [];
   makeApple()
   // TODO 4c-2: initialize the snake
   // initialize the snake's body as an empty Array
-snake.body = [];
 
 // make the first snakeSquare and set it as the head
 makeSnakeSquare(10, 10);
@@ -231,7 +231,7 @@ function hasCollidedWithSnake() {
   */
  
 for (let i = 1; snake.body.length > i; i++){
-  if (snake.body[0].column && snake.body[0].row === snake.body[i].column && snake.body[i].row){
+  if (snake.body[0].column === snake.body[i].column && snake.body[0].row === snake.body[i].row){
     return true;
   } 
 } return false;
@@ -355,6 +355,11 @@ function getRandomAvailablePosition() {
     not occupied by a snakeSquare in the snake's body. If it is then set 
     spaceIsAvailable to false so that a new position is generated.
     */
+   for(let i = 0; i > snake.body.length ; i++){
+    if (apple.row === snake.body[i].row && apple.column === snake.body[i].column){
+      return false;
+    }
+  }
   }
 
   return randomPosition;
