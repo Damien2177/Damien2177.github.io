@@ -21,7 +21,7 @@ function resetAndRender() {
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
 
-  
+  applyFilter()
 
   // do not change the below line of code
   render($("#display"), image);
@@ -32,7 +32,18 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2 & 4: Create the applyFilter function here
-
+function applyFilter (){
+  for(let c = 0; c < image.length; c++ ){
+      let row = image[c].length;
+    for(let d = 0; d < row.length; d++){
+      let rgbString = row[d];
+      let rgbNumbers = rgbStringToArray(rgbString) 
+      rgbNumbers[RED] = 255;
+      rgbString = rgbArrayToString(rgbNumbers)
+      row[d] = rgbString
+    }
+  }
+}
 
 // TODO 7: Create the applyFilterNoBackground function
 
@@ -41,7 +52,9 @@ function applyAndRender() {
 
 
 // TODO 3: Create reddify function
-
+function reddify(z){
+  z[RED] = 200
+}
 
 // TODO 6: Create more filter functions
 
