@@ -23,9 +23,8 @@ function applyAndRender() {
 
   applyFilter(reddify)
 
-  applyFilter(reddify)
-applyFilter(decreaseBlue)
-applyFilter(increaseGreenByBlue)
+  applyFilter(decreaseBlue)
+  applyFilter(increaseGreenByBlue)
   // do not change the below line of code
   render($("#display"), image);
 }
@@ -52,8 +51,8 @@ function applyFilter(filterFunction) {
 
 
 // TODO 5: Create the keepInBounds function
-function keepInBounds(area){
-  area = (area < 0 ? 0 : (area > 255 ? 255: area))
+function keepInBounds(area) {
+  area = (area < 0 ? 0 : (area > 255 ? 255 : area))
 }
 
 
@@ -63,12 +62,11 @@ function reddify(z) {
 }
 
 // TODO 6: Create more filter functions
-function decreaseBlue (par){
-  
-  par = keepInBounds(par - 50);
+function decreaseBlue(par) {
+  par[blue] = keepInBounds(par - 50);
 }
-function increaseGreenByBlue (anarray){
-  anarray = keepInBounds(par + anarray);
+function increaseGreenByBlue(anarray) {
+  anarray[green] = keepInBounds(anarray[blue] + anarray[green]);
 }
 
 
