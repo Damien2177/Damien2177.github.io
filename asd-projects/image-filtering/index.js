@@ -23,6 +23,9 @@ function applyAndRender() {
 
   applyFilter(reddify)
 
+  applyFilter(reddify)
+applyFilter(decreaseBlue)
+applyFilter(increaseGreenByBlue)
   // do not change the below line of code
   render($("#display"), image);
 }
@@ -32,12 +35,12 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2 & 4: Create the applyFilter function here
-function applyFilter (filterFunction){
-  for(let c = 0; c < image.length; c++ ){
-      let row = image[c].length;
-      for(let d = 0; d < row.length; d++){
+function applyFilter(filterFunction) {
+  for (let c = 0; c < image.length; c++) {
+    let row = image[c];
+    for (let d = 0; d < row.length; d++) {
       let rgbString = row[d];
-      let rgbNumbers = rgbStringToArray(rgbString) 
+      let rgbNumbers = rgbStringToArray(rgbString)
       filterFunction(rgbNumbers)
       rgbString = rgbArrayToString(rgbNumbers)
       row[d] = rgbString
@@ -49,14 +52,25 @@ function applyFilter (filterFunction){
 
 
 // TODO 5: Create the keepInBounds function
+function keepInBounds(area){
+  area = (area < 0 ? 0 : (area > 255 ? 255: area))
+}
 
 
 // TODO 3: Create reddify function
-function reddify(z){
+function reddify(z) {
   z[RED] = 200
 }
 
 // TODO 6: Create more filter functions
+function decreaseBlue (par){
+  
+  par = keepInBounds(par - 50);
+}
+function increaseGreenByBlue (anarray){
+  anarray = keepInBounds(par + anarray);
+}
+
 
 
 // CHALLENGE code goes below here
