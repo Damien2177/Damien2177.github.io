@@ -49,10 +49,24 @@ function applyFilter(filterFunction) {
 
 // TODO 7: Create the applyFilterNoBackground function
 
+function applyFilterNoBackground(){
+  let backgroundColor = image[0][0]; 
+  for (let c = 0; c < image.length; c++) {
+    let row = image[c];
+    for (let d = 0; d < row.length; d++) {
+      let rgbString = row[d];
+      let rgbNumbers = rgbStringToArray(rgbString)
+      filterFunction(rgbNumbers)
+      rgbString = rgbArrayToString(rgbNumbers)
+      row[d] = rgbString
+    }
+  }
+}
 
 // TODO 5: Create the keepInBounds function
 function keepInBounds(area) {
   area = (area < 0 ? 0 : (area > 255 ? 255 : area))
+  return area;
 }
 
 
@@ -63,12 +77,27 @@ function reddify(z) {
 
 // TODO 6: Create more filter functions
 function decreaseBlue(par) {
-  par[blue] = keepInBounds(par - 50);
+  par[BLUE] = keepInBounds(par[BLUE] - 50);
 }
 function increaseGreenByBlue(anarray) {
-  anarray[green] = keepInBounds(anarray[blue] + anarray[green]);
+  anarray[GREEN] = keepInBounds(anarray[BLUE] + anarray[GREEN]);
 }
 
 
 
 // CHALLENGE code goes below here
+
+function smudge (pixel, smuged) {
+  for (let c = 0; c < image.length; c++) {
+    let row = image[c];
+    for (let d = 0; d < row.length; d++) {
+      let rgbString = row[d];
+      let rgbNumbers = rgbStringToArray(rgbString)
+      filterFunction(rgbNumbers)
+      rgbString = rgbArrayToString(rgbNumbers)
+      row[d] = rgbString
+    }
+  }
+}
+
+
