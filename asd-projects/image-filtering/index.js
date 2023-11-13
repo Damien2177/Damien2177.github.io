@@ -55,10 +55,12 @@ function applyFilterNoBackground(){
     let row = image[c];
     for (let d = 0; d < row.length; d++) {
       let rgbString = row[d];
+      if (backgroundColor != rgbString){
       let rgbNumbers = rgbStringToArray(rgbString)
       filterFunction(rgbNumbers)
       rgbString = rgbArrayToString(rgbNumbers)
       row[d] = rgbString
+      }
     }
   }
 }
