@@ -92,10 +92,13 @@ function smudge (pixel, smuged) {
     let row = image[c];
     for (let d = 0; d < row.length; d++) {
       let rgbString = row[d];
-      let rgbNumbers = rgbStringToArray(rgbString)
-      filterFunction(rgbNumbers)
-      rgbString = rgbArrayToString(rgbNumbers)
-      row[d] = rgbString
+
+      let rgbNumbers = rgbStringToArray(rgbString); //change string to number
+      filterFunction(rgbNumbers);
+      rgbString = rgbArrayToString(rgbNumbers); 
+
+      row[d] = rgbString;
+
     }
   }
 }
