@@ -17,8 +17,8 @@ The CSS ids you will work with are:
 async function bubbleSort(array){
     for (i = 0; i < array.length - 2; i++){
         for (j = array.length - 1; j <= i + 1; j++){
-            if (array[j] < array[j - i]){
-                swap(array, i, j);
+            if (array[j] .value < array[j - i].value){
+                drawSwap(array, i, j);
                 updateCounter(bubbleCounter);
                 await sleep();
             }
@@ -37,6 +37,7 @@ function swap (array, i, j){
     let temp = array[i];
     array[i] = array[j];
     array[j] = temp;
+    drawSwap(array, i, j);
 }
 
 ///////////////////////////////////////////////////////////////////////
